@@ -1,0 +1,82 @@
+
+ #include <iostream>
+
+ using namespace std;
+
+ class employee
+ {
+     public:
+       string   a;
+         string   emp_number;
+         string  emp_n;
+         float emp_salary;
+         float emp_bonus;
+         string emp_address;
+         string emp_dob;
+          int month;
+
+         void get(){
+           cin>>a;
+
+
+         }
+
+                 void get_emp_details();
+                 float find_net_salary(float salary,float bonus);
+                 void show_emp_details();
+ };
+
+ void employee :: get_emp_details()
+ {
+
+         cout<<"\n Enter employee number:\t ";
+         cin>>emp_number;
+         cout<<"\n Enter employee name: ";
+         cin>>emp_n;
+         cout<<"\n Enter employee address: ";
+         cin>>emp_address;
+         cout<<"\n Enter employee date of birth: ";
+         cin>>emp_dob;
+        cout <<"\n Employee Salary :" ;
+        cin>>emp_salary;
+        cout<<"\nWorking Time Month : ";
+        cin>>month;
+        if (month>5) { emp_bonus = emp_salary*.10;
+
+             cout<<"\n Employee Bonuus :"<<emp_bonus ;
+        };
+
+
+
+        //if (month>5) emp_bonus = emp_salary*.10;
+
+
+ }
+
+ float employee :: find_net_salary(float salary, float bonus)
+ {
+     return (salary+bonus);
+ }
+
+ void employee :: show_emp_details()
+ {
+         cout<<"\n\n-------------------------------------\n\n";
+         cout<<"Details of employee";
+         cout<<"Employee Name      :  "<<emp_n<<endl;
+         cout<<"Employee number    :  "<<emp_number<<endl;
+         cout<<"Basic salary       :  "<<emp_salary<<endl;
+         cout<<"Employee bonus     :  "<<emp_bonus<<endl;
+         cout<<"Net Salary         :  "<<find_net_salary(emp_salary, emp_bonus)<<endl;
+
+ }
+
+
+ int main()
+ {
+     employee emp;
+
+     emp.get_emp_details();
+     emp.show_emp_details();
+
+     return 0;
+ }
